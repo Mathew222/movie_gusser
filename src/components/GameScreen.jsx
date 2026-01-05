@@ -1,39 +1,60 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Clock, Lightbulb, Trophy, Send, CheckCircle, XCircle } from 'lucide-react'
+import { Clock, Lightbulb, Trophy, Send, CheckCircle, XCircle, Flag } from 'lucide-react'
 import HintCard from './HintCard'
 import ScoreDisplay from './ScoreDisplay'
 import TimerDisplay from './TimerDisplay'
 
-const GameScreen = ({ 
-  currentMovie, 
-  score, 
-  timeLeft, 
-  hintsRevealed, 
-  difficulty, 
+const GameScreen = ({
+  currentMovie,
+  score,
+  timeLeft,
+  hintsRevealed,
+  difficulty,
   timerMode,
-  onSubmitGuess, 
+  onSubmitGuess,
   onUseHint,
-  isGameActive 
+  onGiveUp,
+  isGameActive
 }) => {
   const [guess, setGuess] = useState('')
   const [feedback, setFeedback] = useState(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [giveUpResult, setGiveUpResult] = useState(null)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (!guess.trim() || !isGameActive || isSubmitting) return
-    
+
     setIsSubmitting(true)
     const result = onSubmitGuess(guess.trim())
-    
+
     setFeedback(result)
     setGuess('')
-    
+
     setTimeout(() => {
       setFeedback(null)
       setIsSubmitting(false)
     }, 2000)
+  }
+
+  const handleGiveUp = () => {
+    if (!isGameActive || isSubmitting) return
+
+    setIsSubmitting(true)
+    const result = onGiveUp()
+
+    if (result) {
+      setGiveUpResult(result)
+      setGuess('')
+
+      setTimeout(() => {
+        setGiveUpResult(null)
+        setIsSubmitting(false)
+      }, 3000)
+    } else {
+      setIsSubmitting(false)
+    }
   }
 
   const getMaxHints = () => {
@@ -103,9 +124,9 @@ const GameScreen = ({
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <HintCard 
-                      type={hintKey} 
-                      value={currentMovie?.hints[hintKey]} 
+                    <HintCard
+                      type={hintKey}
+                      value={currentMovie?.hints[hintKey]}
                     />
                   </motion.div>
                 ))}
@@ -140,11 +161,10 @@ const GameScreen = ({
                 disabled={!canUseHint || isSubmitting}
                 whileHover={canUseHint ? { scale: 1.05 } : {}}
                 whileTap={canUseHint ? { scale: 0.95 } : {}}
-                className={`px-6 py-4 rounded-xl font-semibold transition-all duration-300 ${
-                  canUseHint
-                    ? 'bg-yellow-500 hover:bg-yellow-600 text-black'
-                    : 'bg-gray-600 text-gray-400 cursor-not-allowed'
-                }`}
+                className={`px-6 py-4 rounded-xl font-semibold transition-all duration-300 ${canUseHint
+                  ? 'bg-yellow-500 hover:bg-yellow-600 text-black'
+                  : 'bg-gray-600 text-gray-400 cursor-not-allowed'
+                  }`}
               >
                 <Lightbulb size={20} className="inline mr-2" />
                 Hint
@@ -154,11 +174,10 @@ const GameScreen = ({
                 disabled={!guess.trim() || !isGameActive || isSubmitting}
                 whileHover={guess.trim() && isGameActive ? { scale: 1.05 } : {}}
                 whileTap={guess.trim() && isGameActive ? { scale: 0.95 } : {}}
-                className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 ${
-                  guess.trim() && isGameActive
-                    ? 'btn-primary'
-                    : 'bg-gray-600 text-gray-400 cursor-not-allowed'
-                }`}
+                className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 ${guess.trim() && isGameActive
+                  ? 'btn-primary'
+                  : 'bg-gray-600 text-gray-400 cursor-not-allowed'
+                  }`}
               >
                 {isSubmitting ? (
                   <motion.div
@@ -173,6 +192,20 @@ const GameScreen = ({
                   </>
                 )}
               </motion.button>
+              <motion.button
+                type="button"
+                onClick={handleGiveUp}
+                disabled={!isGameActive || isSubmitting}
+                whileHover={isGameActive ? { scale: 1.05 } : {}}
+                whileTap={isGameActive ? { scale: 0.95 } : {}}
+                className={`px-6 py-4 rounded-xl font-semibold transition-all duration-300 ${isGameActive
+                  ? 'bg-red-500 hover:bg-red-600 text-white'
+                  : 'bg-gray-600 text-gray-400 cursor-not-allowed'
+                  }`}
+              >
+                <Flag size={20} className="inline mr-2" />
+                Give Up
+              </motion.button>
             </div>
           </div>
         </motion.form>
@@ -184,11 +217,10 @@ const GameScreen = ({
               initial={{ opacity: 0, scale: 0.8, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.8, y: -20 }}
-              className={`text-center py-6 px-8 rounded-xl font-bold text-xl ${
-                feedback.correct
-                  ? 'bg-green-500/20 text-green-400 border border-green-500/50'
-                  : 'bg-red-500/20 text-red-400 border border-red-500/50'
-              }`}
+              className={`text-center py-6 px-8 rounded-xl font-bold text-xl ${feedback.correct
+                ? 'bg-green-500/20 text-green-400 border border-green-500/50'
+                : 'bg-red-500/20 text-red-400 border border-red-500/50'
+                }`}
             >
               <div className="flex items-center justify-center space-x-3">
                 {feedback.correct ? (
@@ -208,6 +240,27 @@ const GameScreen = ({
                   +{feedback.pointsEarned} points!
                 </motion.p>
               )}
+            </motion.div>
+          )}
+          {giveUpResult && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.8, y: -20 }}
+              className="text-center py-6 px-8 rounded-xl font-bold text-xl bg-orange-500/20 text-orange-400 border border-orange-500/50"
+            >
+              <div className="flex items-center justify-center space-x-3">
+                <Flag size={28} />
+                <span>{giveUpResult.message}</span>
+              </div>
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-lg mt-2 text-orange-300"
+              >
+                Loading next movie...
+              </motion.p>
             </motion.div>
           )}
         </AnimatePresence>
