@@ -4,8 +4,9 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-transparent;
   }
+
   body {
     @apply bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white min-h-screen;
   }
@@ -15,19 +16,19 @@
   .game-card {
     @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-xl;
   }
-  
+
   .btn-primary {
     @apply bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95;
   }
-  
+
   .btn-secondary {
     @apply bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95;
   }
-  
+
   .hint-card {
     @apply bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-500/30 rounded-xl p-4 backdrop-blur-sm;
   }
-  
+
   .score-badge {
     @apply bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-full font-bold shadow-lg;
   }

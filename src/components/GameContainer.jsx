@@ -10,7 +10,7 @@ const GameContainer = () => {
   const [gameState, setGameState] = useState('welcome') // 'welcome', 'playing', 'gameOver'
   const [highScore, setHighScore] = useLocalStorage('movieGameHighScore', 0)
   const [totalGamesPlayed, setTotalGamesPlayed] = useLocalStorage('movieGameTotal', 0)
-  
+
   const {
     currentMovie,
     score,
@@ -22,6 +22,7 @@ const GameContainer = () => {
     isGameActive,
     submitGuess,
     useHint,
+    giveUp,
     startNewGame,
     resetGame,
     setDifficulty,
@@ -72,14 +73,14 @@ const GameContainer = () => {
             exit={{ opacity: 0, y: -50 }}
             transition={{ duration: 0.5 }}
           >
-            <WelcomeScreen 
+            <WelcomeScreen
               onStartGame={handleStartGame}
               highScore={highScore}
               totalGamesPlayed={totalGamesPlayed}
             />
           </motion.div>
         )}
-        
+
         {gameState === 'playing' && (
           <motion.div
             key="playing"
@@ -97,11 +98,12 @@ const GameContainer = () => {
               timerMode={timerMode}
               onSubmitGuess={submitGuess}
               onUseHint={useHint}
+              onGiveUp={giveUp}
               isGameActive={isGameActive}
             />
           </motion.div>
         )}
-        
+
         {gameState === 'gameOver' && (
           <motion.div
             key="gameOver"

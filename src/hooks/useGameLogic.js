@@ -75,7 +75,7 @@ export const useGameLogic = () => {
     if (isCorrect) {
       const pointsEarned = calculateScore(difficulty, hintsRevealed.length, timeLeft, timerMode)
       setScore(prev => prev + pointsEarned)
-      
+
       setGameStats(prev => ({
         ...prev,
         gamesPlayed: prev.gamesPlayed + 1
@@ -116,6 +116,25 @@ export const useGameLogic = () => {
     }
   }, [currentMovie, hintsRevealed])
 
+  const giveUp = useCallback(() => {
+    if (!currentMovie || !isGameActive) return null
+
+    setGameStats(prev => ({
+      ...prev,
+      gamesPlayed: prev.gamesPlayed + 1
+    }))
+
+    // Start new movie after a delay
+    setTimeout(() => {
+      startNewGame()
+    }, 3000)
+
+    return {
+      movieTitle: currentMovie.title,
+      message: `The movie was "${currentMovie.title}"`
+    }
+  }, [currentMovie, isGameActive, startNewGame])
+
   const getMaxHints = () => {
     switch (difficulty) {
       case 'easy': return 5
@@ -136,6 +155,7 @@ export const useGameLogic = () => {
     isGameActive,
     submitGuess,
     useHint,
+    giveUp,
     startNewGame,
     resetGame,
     setDifficulty,
