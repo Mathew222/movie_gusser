@@ -35,14 +35,28 @@ export const useGameLogic = () => {
     return () => clearInterval(interval)
   }, [timerMode, isGameActive, timeLeft])
 
+  // Get time based on difficulty
+  const getTimeForDifficulty = useCallback((diff) => {
+    switch (diff) {
+      case 'easy': return 120
+      case 'medium': return 60
+      case 'hard': return 30
+      default: return 60
+    }
+  }, [])
+
   const startNewGame = useCallback(() => {
     const newMovie = getRandomMovie()
     setCurrentMovie(newMovie)
     setHintsRevealed([])
-    setTimeLeft(60)
+    setTimeLeft(getTimeForDifficulty(difficulty))
     setIsGameActive(true)
     setUsedMovies(prev => [...prev, newMovie.id])
-  }, [])
+    // Auto-enable timer for hard mode
+    if (difficulty === 'hard') {
+      setTimerMode(true)
+    }
+  }, [difficulty, getTimeForDifficulty])
 
   const resetGame = useCallback(() => {
     setCurrentMovie(null)
@@ -153,6 +167,7 @@ export const useGameLogic = () => {
     timerMode,
     gameStats,
     isGameActive,
+    getTimeForDifficulty,
     submitGuess,
     useHint,
     giveUp,

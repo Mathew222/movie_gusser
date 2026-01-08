@@ -20,6 +20,7 @@ const GameContainer = () => {
     timerMode,
     gameStats,
     isGameActive,
+    getTimeForDifficulty,
     submitGuess,
     useHint,
     giveUp,
@@ -93,6 +94,7 @@ const GameContainer = () => {
               currentMovie={currentMovie}
               score={score}
               timeLeft={timeLeft}
+              maxTime={getTimeForDifficulty(difficulty)}
               hintsRevealed={hintsRevealed}
               difficulty={difficulty}
               timerMode={timerMode}
