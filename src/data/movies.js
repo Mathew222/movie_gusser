@@ -298,6 +298,66 @@ export const moviesDatabase = [
       director: "Peter Jackson",
       dialogue: "You shall not pass!"
     }
+  },
+  {
+    id: 26,
+    title: "Fight Club",
+    description: "An insomniac office worker and a soap salesman build a global organization to help vent male aggression.",
+    hints: {
+      genre: "Drama, Thriller",
+      year: 1999,
+      actors: ["Brad Pitt", "Edward Norton"],
+      director: "David Fincher",
+      dialogue: "The first rule of Fight Club is: you do not talk about Fight Club."
+    }
+  },
+  {
+    id: 27,
+    title: "The Shining",
+    description: "A family heads to an isolated hotel for the winter where a sinister presence influences the father into violence.",
+    hints: {
+      genre: "Drama, Horror",
+      year: 1980,
+      actors: ["Jack Nicholson", "Shelley Duvall"],
+      director: "Stanley Kubrick",
+      dialogue: "Here's Johnny!"
+    }
+  },
+  {
+    id: 28,
+    title: "Interstellar",
+    description: "When Earth becomes uninhabitable, a team of explorers travel through a wormhole in space to find a new home for humanity.",
+    hints: {
+      genre: "Adventure, Drama, Sci-Fi",
+      year: 2014,
+      actors: ["Matthew McConaughey", "Anne Hathaway"],
+      director: "Christopher Nolan",
+      dialogue: "Love is the one thing that transcends time and space."
+    }
+  },
+  {
+    id: 29,
+    title: "The Terminator",
+    description: "A human soldier is sent from the future to protect a woman from a nearly indestructible cyborg assassin.",
+    hints: {
+      genre: "Action, Sci-Fi",
+      year: 1984,
+      actors: ["Arnold Schwarzenegger", "Linda Hamilton"],
+      director: "James Cameron",
+      dialogue: "I'll be back."
+    }
+  },
+  {
+    id: 30,
+    title: "Frozen",
+    description: "When a newly crowned queen accidentally unleashes eternal winter, her sister must team up with a rugged ice harvester to find her.",
+    hints: {
+      genre: "Animation, Adventure, Comedy",
+      year: 2013,
+      actors: ["Kristen Bell", "Idina Menzel"],
+      director: "Chris Buck",
+      dialogue: "Let it go!"
+    }
   }
 ]
 
