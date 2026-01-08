@@ -1,3 +1,13 @@
+/**
+ * Movie Guess Game - Main Application
+ * 
+ * A fun movie guessing game with multiple difficulty levels,
+ * hints system, and timer mode for challenging gameplay.
+ * 
+ * @version 1.0.0
+ * @author Movie Guess Team
+ */
+
 import React, { useEffect } from 'react'
 import GameContainer from './components/GameContainer'
 import ErrorBoundary from './components/ErrorBoundary'
