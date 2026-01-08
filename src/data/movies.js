@@ -238,6 +238,66 @@ export const moviesDatabase = [
       director: "John Lasseter",
       dialogue: "To infinity and beyond!"
     }
+  },
+  {
+    id: 21,
+    title: "The Avengers",
+    description: "Earth's mightiest heroes must come together and learn to fight as a team to stop an alien army from taking over the planet.",
+    hints: {
+      genre: "Action, Adventure, Sci-Fi",
+      year: 2012,
+      actors: ["Robert Downey Jr.", "Chris Evans"],
+      director: "Joss Whedon",
+      dialogue: "I am Iron Man."
+    }
+  },
+  {
+    id: 22,
+    title: "Gladiator",
+    description: "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.",
+    hints: {
+      genre: "Action, Adventure, Drama",
+      year: 2000,
+      actors: ["Russell Crowe", "Joaquin Phoenix"],
+      director: "Ridley Scott",
+      dialogue: "Are you not entertained?"
+    }
+  },
+  {
+    id: 23,
+    title: "The Silence of the Lambs",
+    description: "A young FBI cadet must receive the help of an incarcerated cannibalistic killer to catch another serial killer.",
+    hints: {
+      genre: "Crime, Drama, Thriller",
+      year: 1991,
+      actors: ["Jodie Foster", "Anthony Hopkins"],
+      director: "Jonathan Demme",
+      dialogue: "I ate his liver with some fava beans and a nice Chianti."
+    }
+  },
+  {
+    id: 24,
+    title: "Schindler's List",
+    description: "In German-occupied Poland during World War II, a businessman becomes concerned for his Jewish workforce after witnessing their persecution.",
+    hints: {
+      genre: "Biography, Drama, History",
+      year: 1993,
+      actors: ["Liam Neeson", "Ben Kingsley"],
+      director: "Steven Spielberg",
+      dialogue: "Whoever saves one life, saves the world entire."
+    }
+  },
+  {
+    id: 25,
+    title: "The Lord of the Rings: The Fellowship of the Ring",
+    description: "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth.",
+    hints: {
+      genre: "Action, Adventure, Drama",
+      year: 2001,
+      actors: ["Elijah Wood", "Ian McKellen"],
+      director: "Peter Jackson",
+      dialogue: "You shall not pass!"
+    }
   }
 ]
 
@@ -247,7 +307,7 @@ export const getRandomMovie = () => {
 }
 
 export const searchMovieByTitle = (title) => {
-  return moviesDatabase.find(movie => 
+  return moviesDatabase.find(movie =>
     movie.title.toLowerCase() === title.toLowerCase()
   )
 }
