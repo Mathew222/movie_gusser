@@ -358,6 +358,18 @@ export const moviesDatabase = [
       director: "Chris Buck",
       dialogue: "Let it go!"
     }
+  },
+  {
+    id: 31,
+    title: "The Prestige",
+    description: "Two stage magicians engage in a bitter rivalry, each trying to expose the secrets of the other while developing the ultimate illusion.",
+    hints: {
+      genre: "Drama, Mystery, Sci-Fi",
+      year: 2006,
+      actors: ["Christian Bale", "Hugh Jackman"],
+      director: "Christopher Nolan",
+      dialogue: "Are you watching closely?"
+    }
   }
 ]
 
