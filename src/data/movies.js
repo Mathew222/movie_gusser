@@ -370,6 +370,18 @@ export const moviesDatabase = [
       director: "Christopher Nolan",
       dialogue: "Are you watching closely?"
     }
+  },
+  {
+    id: 32,
+    title: "Django Unchained",
+    description: "With the help of a German bounty hunter, a freed slave sets out to rescue his wife from a brutal Mississippi plantation owner.",
+    hints: {
+      genre: "Drama, Western",
+      year: 2012,
+      actors: ["Jamie Foxx", "Christoph Waltz"],
+      director: "Quentin Tarantino",
+      dialogue: "The D is silent."
+    }
   }
 ]
 
