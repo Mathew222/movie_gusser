@@ -48,6 +48,10 @@ npm run build
 | Medium | 3     | 60s (optional) |
 | Hard   | 1     | 30s (always on) |
 
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
 ## License
 
 MIT
