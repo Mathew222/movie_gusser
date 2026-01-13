@@ -382,6 +382,18 @@ export const moviesDatabase = [
       director: "Quentin Tarantino",
       dialogue: "The D is silent."
     }
+  },
+  {
+    id: 33,
+    title: "Parasite",
+    description: "Greed and class discrimination threaten the newly formed symbiotic relationship between a wealthy family and the destitute family who have infiltrated their household.",
+    hints: {
+      genre: "Comedy, Drama, Thriller",
+      year: 2019,
+      actors: ["Song Kang-ho", "Cho Yeo-jeong"],
+      director: "Bong Joon-ho",
+      dialogue: "You know what kind of plan never fails? No plan at all."
+    }
   }
 ]
 
