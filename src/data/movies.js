@@ -394,6 +394,18 @@ export const moviesDatabase = [
       director: "Bong Joon-ho",
       dialogue: "You know what kind of plan never fails? No plan at all."
     }
+  },
+  {
+    id: 34,
+    title: "The Grand Budapest Hotel",
+    description: "A writer encounters the owner of an aging high-class hotel, who tells him of his early years serving as a lobby boy in the hotel's glorious years under a legendary concierge.",
+    hints: {
+      genre: "Adventure, Comedy, Crime",
+      year: 2014,
+      actors: ["Ralph Fiennes", "Tony Revolori"],
+      director: "Wes Anderson",
+      dialogue: "Keep your hands off my lobby boy!"
+    }
   }
 ]
 
