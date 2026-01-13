@@ -406,6 +406,18 @@ export const moviesDatabase = [
       director: "Wes Anderson",
       dialogue: "Keep your hands off my lobby boy!"
     }
+  },
+  {
+    id: 35,
+    title: "Dune",
+    description: "A noble family becomes embroiled in a war for control over the galaxy's most valuable asset while its heir becomes troubled by visions of a dark future.",
+    hints: {
+      genre: "Action, Adventure, Drama",
+      year: 2021,
+      actors: ["Timothée Chalamet", "Zendaya"],
+      director: "Denis Villeneuve",
+      dialogue: "Fear is the mind-killer."
+    }
   }
 ]
 
