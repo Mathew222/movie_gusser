@@ -112,3 +112,14 @@ export const getScoreMessage = (score) => {
   if (score >= 10) return "😊 Good start! Practice makes perfect!"
   return "💪 Don't give up! Every guess counts!"
 }
+
+/**
+ * Calculate streak bonus for consecutive correct answers
+ */
+export const calculateStreakBonus = (streak) => {
+  if (streak < 2) return 0
+  if (streak >= 10) return 15
+  if (streak >= 5) return 10
+  if (streak >= 3) return 5
+  return 2
+}
