@@ -12,6 +12,7 @@ export default {
         'fade-in': 'fadeIn 0.3s ease-in',
         'pulse-soft': 'pulseSoft 2s ease-in-out infinite',
         'shake': 'shake 0.5s ease-in-out',
+        'wiggle': 'wiggle 0.3s ease-in-out',
       },
       keyframes: {
         bounceIn: {
@@ -36,6 +37,11 @@ export default {
           '0%, 100%': { transform: 'translateX(0)' },
           '10%, 30%, 50%, 70%, 90%': { transform: 'translateX(-10px)' },
           '20%, 40%, 60%, 80%': { transform: 'translateX(10px)' },
+        },
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(0deg)' },
+          '25%': { transform: 'rotate(-3deg)' },
+          '75%': { transform: 'rotate(3deg)' },
         },
       },
       colors: {
