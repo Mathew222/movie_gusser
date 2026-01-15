@@ -29,6 +29,8 @@ const HintCard = ({ type, value }) => {
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ type: "spring", stiffness: 300, damping: 25 }}
       className="hint-card group hover:border-amber-400/50 transition-all duration-300"
+      role="region"
+      aria-label={`${config.label} hint`}
     >
       <div className="flex items-center space-x-3 mb-3">
         <motion.div
