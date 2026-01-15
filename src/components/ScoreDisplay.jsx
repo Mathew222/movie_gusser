@@ -11,6 +11,7 @@ const ScoreDisplay = ({ score, previousScore = 0 }) => {
       animate={{ scale: 1 }}
       transition={{ type: "spring", stiffness: 300, damping: 25 }}
       className="score-badge relative"
+      aria-label={`Current score: ${score} points`}
     >
       <div className="flex items-center space-x-2">
         <Trophy size={20} className="text-yellow-200" />
