@@ -186,3 +186,7 @@
 .hover-lift:hover {
   transform: translateY(-2px);
 }
+
+.focus-ring {
+  @apply outline-none ring-2 ring-purple-500 ring-offset-2 ring-offset-transparent;
+}
