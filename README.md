@@ -52,6 +52,13 @@ npm run build
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
+## Author
+
+Created with ❤️ by Mathew
+
 ## License
 
 MIT
+
+---
+Last updated: January 2026
