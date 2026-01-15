@@ -28,6 +28,8 @@ const TimerDisplay = ({ timeLeft, maxTime = 60, difficulty = 'medium' }) => {
       animate={isUrgent ? { scale: [1, 1.05, 1] } : {}}
       transition={{ duration: 0.3, repeat: isUrgent ? Infinity : 0 }}
       className={`timer-display ${colors.bg} ${colors.border} ${isUrgent ? 'timer-urgent' : ''}`}
+      aria-live="polite"
+      aria-label={`Time remaining: ${formatTime(timeLeft)}`}
     >
       {/* Circular Progress Ring */}
       <div className="relative w-12 h-12">
