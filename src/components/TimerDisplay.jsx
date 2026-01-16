@@ -1,3 +1,8 @@
+/**
+ * TimerDisplay Component
+ * Shows countdown timer with circular progress ring.
+ * Changes color based on remaining time and difficulty level.
+ */
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Clock, AlertTriangle } from 'lucide-react'
