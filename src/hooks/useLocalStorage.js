@@ -1,3 +1,8 @@
+/**
+ * useLocalStorage Hook
+ * Persists state to localStorage with automatic serialization
+ * and error handling for storage operations.
+ */
 import { useState, useEffect } from 'react'
 
 export const useLocalStorage = (key, initialValue) => {
