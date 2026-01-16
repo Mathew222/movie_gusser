@@ -1,3 +1,8 @@
+/**
+ * GameScreen Component
+ * Main gameplay interface with movie description, guess input,
+ * hint system, timer display, and feedback animations.
+ */
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Clock, Lightbulb, Trophy, Send, CheckCircle, XCircle, Flag, Zap, Target, Film } from 'lucide-react'
