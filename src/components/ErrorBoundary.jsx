@@ -1,3 +1,8 @@
+/**
+ * ErrorBoundary Component
+ * Catches JavaScript errors in child components and displays
+ * a fallback UI with recovery options.
+ */
 import React from 'react';
 import { AlertTriangle, RefreshCw, Home } from 'lucide-react';
 import { motion } from 'framer-motion';
