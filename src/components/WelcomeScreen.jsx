@@ -1,3 +1,8 @@
+/**
+ * WelcomeScreen Component
+ * Landing page with difficulty selection, timer mode toggle,
+ * and player statistics display.
+ */
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Play, Trophy, Clock, Zap, Target, Film } from 'lucide-react'
@@ -76,11 +81,10 @@ const WelcomeScreen = ({ onStartGame, highScore, totalGamesPlayed }) => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setSelectedDifficulty(diff.id)}
-                  className={`p-4 rounded-xl border-2 transition-all duration-300 ${
-                    selectedDifficulty === diff.id
+                  className={`p-4 rounded-xl border-2 transition-all duration-300 ${selectedDifficulty === diff.id
                       ? 'border-purple-500 bg-purple-500/20 shadow-lg shadow-purple-500/20'
                       : 'border-white/20 bg-white/10 hover:border-purple-400 hover:bg-white/20'
-                  }`}
+                    }`}
                 >
                   <div className={`w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-r ${diff.color} flex items-center justify-center`}>
                     <Icon size={24} className="text-white" />
@@ -104,9 +108,8 @@ const WelcomeScreen = ({ onStartGame, highScore, totalGamesPlayed }) => {
             <span className="text-lg font-medium">Timer Mode</span>
             <button
               onClick={() => setSelectedTimerMode(!selectedTimerMode)}
-              className={`relative w-14 h-8 rounded-full transition-colors duration-300 ${
-                selectedTimerMode ? 'bg-blue-600' : 'bg-gray-600'
-              }`}
+              className={`relative w-14 h-8 rounded-full transition-colors duration-300 ${selectedTimerMode ? 'bg-blue-600' : 'bg-gray-600'
+                }`}
             >
               <motion.div
                 animate={{ x: selectedTimerMode ? 24 : 4 }}
