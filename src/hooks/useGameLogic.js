@@ -1,3 +1,8 @@
+/**
+ * useGameLogic Hook
+ * Core game logic for managing movie guessing, scoring,
+ * timer, hints, and game statistics.
+ */
 import { useState, useEffect, useCallback } from 'react'
 import { getRandomMovie } from '../data/movies'
 import { calculateScore, normalizeGuess } from '../utils/gameUtils'
