@@ -1,3 +1,8 @@
+/**
+ * GameContainer Component
+ * Main container that manages game state transitions between
+ * welcome, playing, and game over screens.
+ */
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import WelcomeScreen from './WelcomeScreen'
