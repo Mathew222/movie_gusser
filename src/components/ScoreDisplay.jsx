@@ -1,3 +1,8 @@
+/**
+ * ScoreDisplay Component
+ * Displays the player's current score with animated transitions
+ * and a trophy icon for visual appeal.
+ */
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Trophy, TrendingUp } from 'lucide-react'
