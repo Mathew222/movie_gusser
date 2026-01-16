@@ -1,15 +1,20 @@
+/**
+ * GameOverScreen Component
+ * Displays final score, game statistics, and new high score
+ * celebration with play again options.
+ */
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Trophy, RotateCcw, Play, Star, Target, Clock } from 'lucide-react'
 
-const GameOverScreen = ({ 
-  score, 
-  highScore, 
-  gameStats, 
+const GameOverScreen = ({
+  score,
+  highScore,
+  gameStats,
   difficulty,
-  onPlayAgain, 
-  onContinue, 
-  isNewHighScore 
+  onPlayAgain,
+  onContinue,
+  isNewHighScore
 }) => {
   const getDifficultyColor = () => {
     switch (difficulty) {
@@ -82,17 +87,17 @@ const GameOverScreen = ({
             <div className="text-2xl font-bold text-white">{gameStats.correctGuesses}</div>
             <div className="text-sm text-gray-400">Correct</div>
           </div>
-          
+
           <div className="bg-white/10 rounded-xl p-4 border border-white/20">
             <div className="text-2xl font-bold text-white">{gameStats.totalGuesses}</div>
             <div className="text-sm text-gray-400">Total Guesses</div>
           </div>
-          
+
           <div className="bg-white/10 rounded-xl p-4 border border-white/20">
             <div className="text-2xl font-bold text-white">{getAccuracy()}%</div>
             <div className="text-sm text-gray-400">Accuracy</div>
           </div>
-          
+
           <div className="bg-white/10 rounded-xl p-4 border border-white/20">
             <div className={`text-2xl font-bold capitalize ${getDifficultyColor()}`}>
               {difficulty}
@@ -132,7 +137,7 @@ const GameOverScreen = ({
             <Play className="inline mr-3" size={24} />
             Play Again
           </motion.button>
-          
+
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -152,9 +157,9 @@ const GameOverScreen = ({
           className="mt-8 text-center"
         >
           <p className="text-gray-400 italic">
-            {score >= 100 ? "Movie Master! 🎬" : 
-             score >= 50 ? "Great movie knowledge! 🌟" : 
-             "Keep watching more movies! 📽️"}
+            {score >= 100 ? "Movie Master! 🎬" :
+              score >= 50 ? "Great movie knowledge! 🌟" :
+                "Keep watching more movies! 📽️"}
           </p>
         </motion.div>
       </motion.div>
