@@ -1,3 +1,8 @@
+/**
+ * HintCard Component
+ * Displays movie hints with icons and animations.
+ * Supports genre, year, actors, director, and dialogue hints.
+ */
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Calendar, Users, MessageSquare, Film, Star, Clapperboard } from 'lucide-react'
