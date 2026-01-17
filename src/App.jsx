@@ -4,7 +4,7 @@
  * A fun movie guessing game with multiple difficulty levels,
  * hints system, and timer mode for challenging gameplay.
  * 
- * @version 1.1.0
+ * @version 1.2.0
  * @author Movie Guess Team
  */
 
