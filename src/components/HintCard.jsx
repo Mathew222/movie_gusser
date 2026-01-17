@@ -2,6 +2,10 @@
  * HintCard Component
  * Displays movie hints with icons and animations.
  * Supports genre, year, actors, director, and dialogue hints.
+ * 
+ * @param {Object} props - Component properties
+ * @param {string} props.type - Hint type: 'genre', 'year', 'actors', 'director', or 'dialogue'
+ * @param {string|string[]} props.value - The hint value to display
  */
 import React from 'react'
 import { motion } from 'framer-motion'
