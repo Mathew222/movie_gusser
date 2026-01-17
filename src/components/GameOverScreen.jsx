@@ -2,6 +2,15 @@
  * GameOverScreen Component
  * Displays final score, game statistics, and new high score
  * celebration with play again options.
+ * 
+ * @param {Object} props - Component properties
+ * @param {number} props.score - Current game score
+ * @param {number} props.highScore - All-time high score
+ * @param {Object} props.gameStats - Game statistics object
+ * @param {string} props.difficulty - Game difficulty level
+ * @param {Function} props.onPlayAgain - Handler for new game
+ * @param {Function} props.onContinue - Handler for continuing
+ * @param {boolean} props.isNewHighScore - Whether this is a new high score
  */
 import React from 'react'
 import { motion } from 'framer-motion'
