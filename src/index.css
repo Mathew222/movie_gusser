@@ -5,6 +5,7 @@
 @layer base {
   * {
     @apply border-transparent;
+    scroll-behavior: smooth;
   }
 
   body {
