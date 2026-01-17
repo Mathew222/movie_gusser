@@ -112,6 +112,18 @@
   }
 }
 
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
 @layer components {
   .game-card {
     @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-8 shadow-2xl;
