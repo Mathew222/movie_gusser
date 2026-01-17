@@ -13,6 +13,7 @@ export default {
         'pulse-soft': 'pulseSoft 2s ease-in-out infinite',
         'shake': 'shake 0.5s ease-in-out',
         'wiggle': 'wiggle 0.3s ease-in-out',
+        'spin-slow': 'spin 3s linear infinite',
       },
       keyframes: {
         bounceIn: {
