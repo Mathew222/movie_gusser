@@ -22,6 +22,11 @@ A fun and interactive movie guessing game built with React and Vite.
 - Framer Motion
 - Lucide React Icons
 
+## Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn package manager
+
 ## Getting Started
 
 ```bash
