@@ -32,6 +32,11 @@
   }
 }
 
+/**
+ * Pulse Urgent Animation
+ * Used for timer warnings when time is running out
+ * Combines scaling and shadow effects for urgency
+ */
 @keyframes pulse-urgent {
 
   0%,
