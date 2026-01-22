@@ -1,6 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-
+/**
+ * Vite Configuration
+ * Configures build settings, dev server, and path aliases
+ */
 export default defineConfig({
   plugins: [react()],
   root: '.',
