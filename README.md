@@ -69,4 +69,4 @@ Created with ❤️ by Mathew
 MIT
 
 ---
-Last updated: January 2026
+Last updated: January 22, 2026
