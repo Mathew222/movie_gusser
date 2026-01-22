@@ -69,7 +69,7 @@ const GameContainer = () => {
   }, [isGameActive, gameState, timeLeft, gameStats.gamesPlayed])
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-4" role="main" aria-label="Movie Guess Game Container">
       <AnimatePresence mode="wait">
         {gameState === 'welcome' && (
           <motion.div
