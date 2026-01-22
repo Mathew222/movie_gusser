@@ -15,6 +15,11 @@
   }
 }
 
+/**
+ * Gradient Shift Animation
+ * Creates a smooth, continuous background gradient animation
+ * Duration: 15s for subtle, elegant movement
+ */
 @keyframes gradientShift {
 
   0%,
