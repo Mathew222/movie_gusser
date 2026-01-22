@@ -1,4 +1,8 @@
-/** @type {import('tailwindcss').Config} */
+/**
+ * Tailwind CSS Configuration
+ * Defines custom animations, keyframes, and color palette
+ * @type {import('tailwindcss').Config}
+ */
 export default {
   content: [
     "./index.html",
