@@ -10,6 +10,9 @@ A fun and interactive movie guessing game built with React and Vite.
 - 🏆 **Score Tracking**: Points based on difficulty, hints used, and time remaining
 - 📊 **Game Statistics**: Track your progress and high scores
 - 🎨 **Modern UI**: Beautiful glassmorphism design with smooth animations
+- 🎮 **Give Up Option**: Reveal the answer if you're stuck
+- 📱 **Responsive Design**: Works seamlessly on all devices
+- ⚡ **Fast Performance**: Built with Vite for lightning-fast development
 
 ## Tech Stack
 
